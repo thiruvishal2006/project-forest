@@ -1,0 +1,22 @@
+{
+  "name": "usb-risk-analyzer-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Anonymous USB device risk analysis API using Express and SQLite",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/analyzer.test.js",
+    "update-usb-ids": "node scripts/update-usb-ids.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.1.0"
+  }
+}
