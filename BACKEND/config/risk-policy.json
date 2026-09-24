@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "baseScore": 10,
+  "weights": {
+    "unknownVendor": 15,
+    "unknownProduct": 10,
+    "missingSerial": 5,
+    "nameMismatch": 5,
+    "deviceClass": {
+      "hid": 5,
+      "mass_storage": 5,
+      "composite": 8,
+      "other": 0,
+      "unknown": 0
+    },
+    "trustedDevice": -10
+  },
+  "thresholds": [
+    { "min": 0, "max": 19, "verdict": "Low Risk" },
+    { "min": 20, "max": 39, "verdict": "Moderate Risk" },
+    { "min": 40, "max": 69, "verdict": "High Risk" },
+    { "min": 70, "max": 100, "verdict": "Critical Risk" }
+  ],
+  "trustedDevices": []
+}
