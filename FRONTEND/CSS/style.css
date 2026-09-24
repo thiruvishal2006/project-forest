@@ -420,3 +420,28 @@ pre {
   transform: translateY(-3px);
   box-shadow: 0 10px 32px rgba(79, 140, 255, 0.6);
 }
+/* ---------- Credits ---------- */
+.landing-credits {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  color: #6d7691;
+  letter-spacing: 0.02em;
+}
+
+.landing-credits strong {
+  color: #9aa4bf;
+  font-weight: 600;
+}
+
+.landing-credits .heart {
+  color: #ff5c7a;
+  display: inline-block;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
