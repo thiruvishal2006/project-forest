@@ -266,3 +266,157 @@ pre {
 @media (max-width: 640px) {
   .scan-panel form { grid-template-columns: 1fr; }
 }
+/* ---------- Landing page ---------- */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(79, 140, 255, 0.06), transparent 60%),
+    #05070d;
+}
+
+/* Floating glow orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.orb--1 {
+  width: 360px;
+  height: 360px;
+  background: #4f8cff;
+  top: -100px;
+  left: -80px;
+  animation: float1 9s ease-in-out infinite;
+}
+
+.orb--2 {
+  width: 300px;
+  height: 300px;
+  background: #9d4eff;
+  bottom: -80px;
+  right: -60px;
+  animation: float2 11s ease-in-out infinite;
+}
+
+.orb--3 {
+  width: 220px;
+  height: 220px;
+  background: #00ffc2;
+  top: 50%;
+  left: 70%;
+  animation: float3 13s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 60px) scale(1.1); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.15); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(0.9); }
+}
+
+.landing-card {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 480px;
+  background: rgba(20, 24, 36, 0.55);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3.5rem 2.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  animation: cardEnter 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(30px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.landing-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 0 20px rgba(79, 140, 255, 0.6));
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.landing-card h1 {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #4f8cff, #9d4eff 50%, #00ffc2, #4f8cff);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 300% center; }
+}
+
+.landing-card p {
+  color: #9aa4bf;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+}
+
+.landing-btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.95rem 3rem;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4f8cff, #9d4eff);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(79, 140, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.landing-btn span { position: relative; z-index: 1; }
+
+.landing-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.landing-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.landing-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(79, 140, 255, 0.6);
+}

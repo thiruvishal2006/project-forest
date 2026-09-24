@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USB Device Risk Analyzer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>USB Device Risk Analyzer</h1>
+    <span id="status-pill" class="pill pill--idle">Idle</span>
+  </header>
+
+  <main class="container">
+    <section class="scan-panel">
+      <h2>Scan / Register Device</h2>
+      <form id="device-form">
+        <label>Device Name
+          <input type="text" id="deviceName" required>
+        </label>
+        <label>Vendor ID (VID)
+          <input type="text" id="vendorId" placeholder="e.g. 0x0781" required>
+        </label>
+        <label>Product ID (PID)
+          <input type="text" id="productId" placeholder="e.g. 0x5567" required>
+        </label>
+        <label>Serial Number
+          <input type="text" id="serial">
+        </label>
+        <button type="submit">Analyze Risk</button>
+      </form>
+    </section>
+
+    <section class="results-panel">
+      <h2>Analyzed Devices</h2>
+      <table id="results-table">
+        <thead>
+          <tr>
+            <th>Device</th>
+            <th>VID:PID</th>
+            <th>Risk Score</th>
+            <th>Verdict</th>
+            <th>Scanned At</th>
+          </tr>
+        </thead>
+        <tbody id="results-body">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="detail-panel" id="detail-panel" hidden>
+      <h2>Device Detail</h2>
+      <pre id="detail-json"></pre>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
